@@ -1,3 +1,7 @@
+import os
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 # Django settings for tango_with_django_project project.
 
 DEBUG = True
@@ -111,6 +115,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    'H;/code/code/tango_with_django_project/templates/'
 )
 
 INSTALLED_APPS = (
