@@ -3,6 +3,7 @@ SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 STATIC_PATH =os.path.join(PROJECT_PATH,'static')
+DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates)'
 )
 # Django settings for tango_with_django_project project.
@@ -20,15 +21,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': DATABASE_PATH,                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        #'USER': '',
+        #'PASSWORD': '',
+        #'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        #'PORT': '',                      # Set to empty string for default.
     }
 }
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -78,7 +80,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    'H:/code/code/tango_with_django_project/templates/',
+    'H:/code/code/tango_with_django_project/static/',
     STATIC_PATH,
 
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
