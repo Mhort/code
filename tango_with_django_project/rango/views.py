@@ -1,6 +1,6 @@
+from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
 
 def index(request):
      # Request the context of the request.
@@ -16,6 +16,16 @@ def index(request):
     # Note that the first parameter is the template we wish to use.
     return render_to_response('rango/index.html', context_dict, context)
 
+    # The following code was substituted by what's above
+    #return HttpResponse("Rango says hello world! <a href='/rango/about'>about</a>")
+
 
 def about(request):
-    return HttpResponse("Rango Says: Here is the page. <a href='/rango/index'>Index</a>")
+    context = RequestContext(request)
+
+    context_dict = {'boldmessage': "He's a no good son of a *****"}
+
+    return render_to_response('rango/about.html', context_dict, context)
+
+    # the following code was substituted by what's above
+    # return HttpResponse("Rango Says: Here is the page. <a href='/rango/index'>Index</a>")
